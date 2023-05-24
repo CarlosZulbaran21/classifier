@@ -1,12 +1,10 @@
 const fs = require("fs");
 const csv = require("csv-parser");
 
-
 // Función para leer el dataset CSV
 function readDataset(filename) {
   return new Promise((resolve, reject) => {
     const data = [];
-
     fs.createReadStream(filename)
       .pipe(csv())
       .on("data", (row) => {
@@ -38,4 +36,4 @@ function readDataset(filename) {
   });
 }
 
-module.exports ={readDataset}
+module.exports = { readDataset };
